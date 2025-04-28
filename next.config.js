@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export', // Required for static HTML export (GitHub Pages)
-    distDir: 'docs',
-    images: {
-      unoptimized: true, // Disable Next.js image optimization (static sites need this)
-    },
-    // Optional: Uncomment if deploying to `user.github.io/repo-name`
-    // basePath: '/repo-name',
-  };
-  
-  module.exports = nextConfig;
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/parthlangalia' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/parthlangalia/' : '',
+  distDir: '../out', // Use a relative path to bring 'out' to root
+  trailingSlash: true,
+  images: {
+    unoptimized: true, 
+  },
+};
+
+module.exports = nextConfig;

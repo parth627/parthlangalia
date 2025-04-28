@@ -1,10 +1,12 @@
 {
-    "name": "parthlangalia-frontend",
+    "name": "parthlangalia",
     "version": "1.0.0",
     "private": true,
     "scripts": {
         "dev": "next dev ./frontend",
-        "build": "next build ./frontend",
+        "build": "next build frontend",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d out",
         "start": "next start ./frontend"
     },
     "dependencies": {
@@ -14,6 +16,7 @@
         "react-dom": "latest"
     },
     "devDependencies": {
+        "gh-pages": "^6.1.1",
         "@types/node": "^22.14.1",
         "@types/react": "^19.1.2",
         "autoprefixer": "^10.0.0",
