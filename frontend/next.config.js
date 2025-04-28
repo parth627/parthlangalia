@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export', // Required for static HTML export (GitHub Pages)
-    distDir: 'docs',
+    distDir: './frontend/.next',
     images: {
       unoptimized: true, // Disable Next.js image optimization (static sites need this)
     },
